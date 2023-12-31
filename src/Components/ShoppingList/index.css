@@ -1,0 +1,71 @@
+.SHL_container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.SHL_container_taskbar {
+  height: 650px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.SHL_container_taskbar li {
+  height: 60px;
+  width: 95%;
+  margin-top: 10px;
+  border-radius: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 18px;
+  border: 3px solid black;
+}
+.SHL_container_taskbar li div {
+  height: 100%;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SHL_container_inputbar {
+  height: 80px;
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.SHL_container_inputbar input {
+  height: 40px;
+  width: 300px;
+}
+.SHL_container_inputbar_button {
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+}
+.SHL_container_inputbar select {
+  height: 40px;
+  width: 100px;
+}
+.SHL_container_inputbar div {
+  height: 40px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

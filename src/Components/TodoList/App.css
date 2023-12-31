@@ -1,0 +1,38 @@
+.D1{
+  width: 100vw;
+  height: 100vh;
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+}
+.D2{
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: aliceblue;
+}
+.DInp{
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: blueviolet;
+}
+input{
+  width: 50%;
+  background-color: aliceblue;
+}
+button{
+  width: 60px;
+  height: 30px;
+  background-color: rgb(108, 154, 195);
+}
+.DT{
+  background-color: aliceblue;
+  width: 50%;
+  border: 1.5px solid #000;
+}
