@@ -14,6 +14,7 @@ export default function ColorSection({ data }) {
               onClick={() => {
                 console.log(item.HEX);
                 navigator.clipboard.writeText(item.HEX);
+                alert("HEX copied to your clipboard");
               }}
             >
               Copy HEX
@@ -21,6 +22,7 @@ export default function ColorSection({ data }) {
             <button
               onClick={() => {
                 navigator.clipboard.writeText(hexToRgb(item.HEX));
+                alert("RGB copied to your clipboard");
               }}
             >
               Copy RGB
