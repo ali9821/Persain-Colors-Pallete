@@ -1,38 +1,55 @@
+import { useState } from "react";
+
 export default function ColorSection({ data }) {
   return (
     <div className="CS_container">
       <h1>{data.sectionTitle}</h1>
       <div className="CS_colors_box">
         {data.colors.map((item, index) => (
-          <div
-            key={item.HEX}
-            style={{ backgroundColor: item.HEX }}
-            className="CS_color_item"
-          >
-            <p>{item.HEX}</p>
-            <button
-              onClick={() => {
-                console.log(item.HEX);
-                navigator.clipboard.writeText(item.HEX);
-                alert("HEX copied to your clipboard");
-              }}
-            >
-              Copy HEX
-            </button>
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(hexToRgb(item.HEX));
-                alert("RGB copied to your clipboard");
-              }}
-            >
-              Copy RGB
-            </button>
-          </div>
+          <ColorBox item={item} />
         ))}
       </div>
     </div>
   );
 }
+
+const ColorBox = ({ item }) => {
+  const [show, setShow] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+      key={item.HEX}
+      style={{ backgroundColor: item.HEX }}
+      className="CS_color_item"
+    >
+      {show ? (
+        <>
+          <button
+            onClick={() => {
+              console.log(item.HEX);
+              navigator.clipboard.writeText(item.HEX);
+              alert("HEX copied to your clipboard");
+            }}
+          >
+            Copy HEX
+          </button>
+          <button
+            onClick={() => {
+              navigator.clipboard.writeText(hexToRgb(item.HEX));
+              alert("RGB copied to your clipboard");
+            }}
+          >
+            Copy RGB
+          </button>
+        </>
+      ) : (
+        <p>{item.HEX}</p>
+      )}
+    </div>
+  );
+};
 
 function hexToRgb(hex) {
   // Ensure the hex code is formatted properly

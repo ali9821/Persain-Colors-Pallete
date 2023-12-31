@@ -57,12 +57,6 @@
 .CS_color_item:hover {
   transform: scale(1.08);
 }
-.CS_color_item:hover button {
-  opacity: 1;
-}
-.CS_color_item:hover p {
-  opacity: 0;
-}
 
 .CS_color_item p {
   font-size: 24px;
@@ -82,8 +76,6 @@
   transition: ease-in-out 0.2s;
   cursor: pointer;
   margin: 10px;
-  opacity: 0;
-  z-index: 5;
 }
 .CS_color_item button:hover {
   color: white;
