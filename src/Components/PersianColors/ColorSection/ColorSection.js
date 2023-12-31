@@ -20,6 +20,8 @@ const ColorBox = ({ item }) => {
     <div
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
+      onPointerEnter={() => setShow(true)}
+      onPointerLeave={() => setShow(false)}
       key={item.HEX}
       style={{ backgroundColor: item.HEX }}
       className="CS_color_item"
