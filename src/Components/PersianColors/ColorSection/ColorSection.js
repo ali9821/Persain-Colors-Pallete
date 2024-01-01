@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ColorSection({ data }) {
   return (
@@ -15,11 +15,30 @@ export default function ColorSection({ data }) {
 
 const ColorBox = ({ item }) => {
   const [show, setShow] = useState(false);
+  const ref = useRef(null);
+
+  const handleClick = (e) => {
+    if (ref.current) {
+      const isInside = ref.current.contains(e.target);
+      if (isInside) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleClick);
+
+    return () => {
+      window.removeEventListener("mousemove", handleClick);
+    };
+  }, []);
 
   return (
     <div
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
+      ref={ref}
       key={item.HEX}
       style={{ backgroundColor: item.HEX }}
       className="CS_color_item"
