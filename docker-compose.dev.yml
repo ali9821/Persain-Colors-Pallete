@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: docker_react_container
+    image: docker_react_image
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+
+volumes:
+  node_modules: {}
